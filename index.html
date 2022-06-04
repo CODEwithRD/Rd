@@ -1,110 +1,26 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="responsive.css">
-  
-  <title>Nootan Website</title>
+	<title>Snake Game</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <nav class="navbar background h-nav-resp">
-        <ul class="nav-list v-class-resp">
-            <div class="logo" <img src="/1619516109639.png" alt="logo"></div>
-            
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact us">Contact Us</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
-        
-        
-        <div class="rightNav v-class-resp">
-        <input type="Search" name="Search" id="Search">
-        <Button class="btn btn-sm">Search</Button>
-       </div>
-       
-       <div class="burger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-            </div>
-   
-  </nav>
-  
-  <section class="background firstSection" id="home">
-    <div class="box-main">
-      <div class="firstHalf">
-        <p class="text-big">The Future of EDUCATION..!!</p>
-       <p class="text-small">Education is the process which aids learning, acquiring knowledge and skills to one's character.Education upgrades the thinking of society and helps to uproot social evils.It helps the uniform development of a country by fighting the inequalities of society.</p> 
-       <div class="buttons">
-         <button class="btn btn-red">Subscribe</button>
-          <button class="btn btn-blue">Watch Video</button>
-          
-       </div>
-      </div>
-      
-      <div class="secondHalf">
-        <img src="https://source.unsplash.com/daily" alt="nootan image" />
-      </div>
-    </div>
-  </section>
-  
-  <section class="section">
-        <div class="paras">
-        <p class="sectionTag text-big">The END of Search is Here..</p><br>
-        <p class="sectionSubTag text-small">
-            Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, morals, beliefs, habits, and personal development.<br>[1]Education originated as transmission of cultural heritage from one generation to the next. Today, educational goals increasingly encompass new ideas such as liberation of learners, critical thinking about presented information, skills needed for the modern society, empathy and complex vocational skills.UNESCO defines three main learning settings.<br>[2] Formal education takes place in education and training institutions, is usually structured by curricular aims and objectives, and learning is typically guided by a teacher. In most regions, formal education is compulsory up to a certain age and commonly divided into educational stages such as kindergarten, primary school and secondary school. Nonformal learning occurs as addition or alternative to formal education.
-            </p>
-    </div>
-    <div class="thumbnail">
-        <img src="https://source.unsplash.com/featured?technology" alt="Ranjit" class="imgFluid">
-    </div>
-    </section>
-    
-    <section class="section section-Left" id="services">
-        <div class="paras">
-        <p class="sectionTag text-big">Transforming EDUCATION in India...</p><br>
-        <p class="sectionSubTag text-small">
-             [3] It may be structured according to educational arrangements, but in a more flexible manner, and usually takes place in community-based, workplace-based or civil society-based settings. Lastly, informal settings occurs in daily life, in the family, any experience that has a formative effect on the way one thinks, feels, or acts may be considered educational, whether unintentional or intentional. In practice there is a continuum from the highly formalized to the highly informalized, and informal learning can occur in all three settings.<br>[4] For instance, homeschooling can be classified as nonformal or informal, depending upon the structure. </p>
-    </div>
-    <div class="thumbnail">
-        <img src="https://source.unsplash.com/collection/762855" alt="Ranjit" class="imgFluid">
-    </div>
-    </section>
-  <section class="section" id="about">
-        <div class="paras">
-        <p class="sectionTag text-big">Let's Grow Together....</p><br>
-        <p class="sectionSubTag text-small">
-            It has been argued that high rates of education are essential for countries to be able to achieve high levels of economic growth.Empirical analyses tend to support the theoretical prediction that poor countries should grow faster than rich countries because they can adopt cutting-edge technologies already tried and tested by rich countries. However, technology transfer requires knowledgeable managers and engineers who are able to operate new machines or production practices borrowed from the leader in order to close the gap through imitation. Therefore, a country's ability to learn from the leader is a function of its stock of (human capital). Recent study of the determinants of aggregate economic growth have stressed the importance of fundamental economic institutions and the role of cognitive skills.<br>
-At the level of the individual, there is a large literature, generally related to the work of Jacob Mincer,on how earnings are related to the schooling and other human capital. This work has motivated many studies, but is also controversial. The chief controversies revolve around how to interpret the impact of schooling.Some students who have indicated a high potential for learning, by testing with a high intelligence quotient, may not achieve their full academic potential, due to financial difficulties.
-</p>
-    </div>
-    <div class="thumbnail">
-        <img src="https://source.unsplash.com/user/fuyao/likes" alt="Ranjit" class="imgFluid">
-    </div>
-</section>
-<br>
-<br>
-<section class="contact" id="contact us">
-  <h2 class="text-center">Contact Us</h2>
-  <div class="form">
-      <input class="form-input" type="text" name="name" id="name" placeholder="Enter Your Name">
-      <input class="form-input" type="text" name="phone" id="phone" placeholder="Enter Your Phone">
-      <input class="form-input" type="text" name="email" id="email" placeholder="Enter Your Email">
-      <textarea class="form-input"name="text" id="text" cols="30" rows="10" placeholder="Ellaborate your concern"></textarea>
-      <button class="btn btn-sm btn-dark">Submit</button>
-      
-  </div>
-</section>
-<footer class="background">
-    <p class="text-footer">
-    copyright &copy; 1998 www.iEducate.com - All rights reserved.
-    </p>
-</footer>
-<script src="resp.js"></script>
+	<div id="game-container">
+		<canvas id="gc" class="game-canvas" width="400" height="400"></canvas>
+	</div>
+	<div class="keys">
+	  <a class="up arr" onclick="Snake.action('up')">
+	    <i class="chevron up"></i></a>
+	  <br />
+	  <a class="left arr" onclick="Snake.action('left')">
+	    <i class="chevron left"></i></a>
+	  <a class="down arr" onclick="Snake.action('down')">
+	    <i class="chevron down"></i></a>
+	  <a class="right arr" onclick="Snake.action('right')">
+	    <i class="chevron right"></i></a>
+	</div>
+	<script type="text/javascript" src="game.js"></script>
 </body>
 </html>
